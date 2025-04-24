@@ -1,25 +1,27 @@
 # BseriesOptimizor.py
-this project can be used as a template to create an openscource Bseries Propellor optimization using the COIN module from amplpy and GEKKO based on ship resistance, speed, wake, thrust deduction and blade area coëfficiënt.  optimizing the number of blades; z the rotational speed; n diameter; D and pitch ratio: PD
 
-################################################
+**BseriesOptimizor** is a template project for optimizing B-series propellers using Python. It leverages the optimization power of [AMPL's COIN module](https://amplpy.readthedocs.io/en/latest/modules/coin/) via `amplpy` and the dynamic modeling capabilities of `GEKKO`. The optimization is based on ship-specific parameters such as resistance, speed, wake, thrust deduction, and blade area coefficient.
 
-# List of dependency's installed using PIP:
-# make sure python 3 is installed
+This project is designed for open-source development and provides a flexible framework to explore and optimize key propeller design parameters, including:
 
+- **Number of blades** (`z`)
+- **Rotational speed** (`n`)
+- **Diameter** (`D`)
+- **Pitch ratio** (`P/D`)
+
+---
+
+## Dependencies
+
+Ensure Python 3 is installed:
+- matplotlib
+- os (standard library)
+- numpy
+
+```bash
 python --version
 pip --version
 pip install --upgrade pip
 
 pip install gekko
 python -m pip install amplpy
-
-# make sure you have acces to these library's aswell:
-> matplotlib
-> os
-> numpy
-
-# place the txt in the same directory as the python file.
-# change the # Fixed parameters and/or variable-bounds acording to you needs and it should be ready to run.
-
-point of note:
-the KT and KQ graph seems to be swapped. my guess is that the titles in the txt are swiched around. but this file was given to me from a third party, i maybe wrong here.
