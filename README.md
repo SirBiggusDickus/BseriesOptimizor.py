@@ -20,7 +20,7 @@ the KT and KQ graph seem to be swapped. my guess is that the titles in the txt a
 ## Dependencies
 
 Ensure [Python 3](https://www.pythonguis.com/installation/install-python-windows/) is installed: 
-- matplotlib
+- [matplotlib](https://pythonguides.com/how-to-install-matplotlib-python/)
 - os (standard library)
 - numpy
 
