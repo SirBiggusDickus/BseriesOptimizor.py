@@ -18,18 +18,19 @@ resulting in a graph like this:
 
 ## Dependencies
 
-Ensure Python 3 is installed:
+Ensure [Python 3](https://www.pythonguis.com/installation/install-python-windows/) is installed: 
 - matplotlib
 - os (standard library)
 - numpy
+use the bash below with pip for installing the following dependency's: 
+-pip
+-gekko
+-amplpy
 
 point of note:
 the KT and KQ graph seem to be swapped. my guess is that the titles in the txt are swiched around. but this file was given to me from a third party, i maybe wrong here.
 
 ```bash
-python --version
-pip --version
-pip install --upgrade pip
-
-pip install gekko
+python -m pip install --upgrade pip
+python -m pip install gekko
 python -m pip install amplpy
