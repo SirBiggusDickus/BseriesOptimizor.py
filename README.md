@@ -22,7 +22,7 @@ the KT and KQ graph seem to be swapped. my guess is that the titles in the txt a
 Ensure [Python 3](https://www.pythonguis.com/installation/install-python-windows/) is installed: 
 - [matplotlib](https://pythonguides.com/how-to-install-matplotlib-python/)
 - os (standard library)
-- numpy
+- [numpy](https://numpy.org/install/)
 
 use the bash below with pip for installing the following dependency's:
 -pip
