@@ -12,7 +12,7 @@ This project is designed for open-source development and provides a flexible fra
 - **Pitch ratio** (`P/D`)
 
 resulting in a graph like this:
-![graph_example](https://github.com/user-attachments/assets/2aaa9689-d32f-49e5-9771-33c1abacb59b)
+![graph_example](https://github.com/user-attachments/assets/20ad7f12-58fe-4e0d-8318-8aac217739ca)
 ---
 point of note:
 the KT and KQ graph seem to be swapped. my guess is that the titles in the txt are swiched around. but this file was given to me from a third party, i maybe wrong here.
