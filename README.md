@@ -22,7 +22,7 @@ Ensure [Python 3](https://www.pythonguis.com/installation/install-python-windows
 - matplotlib
 - os (standard library)
 - numpy
-use the bash below with pip for installing the following dependency's: 
+use the bash below with pip for installing the following dependency's
 -pip
 -gekko
 -amplpy
