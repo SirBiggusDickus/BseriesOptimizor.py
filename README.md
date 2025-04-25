@@ -14,6 +14,8 @@ This project is designed for open-source development and provides a flexible fra
 resulting in a graph like this:
 ![graph_example](https://github.com/user-attachments/assets/2aaa9689-d32f-49e5-9771-33c1abacb59b)
 
+point of note:
+the KT and KQ graph seem to be swapped. my guess is that the titles in the txt are swiched around. but this file was given to me from a third party, i maybe wrong here.
 ---
 
 ## Dependencies
@@ -22,13 +24,11 @@ Ensure [Python 3](https://www.pythonguis.com/installation/install-python-windows
 - matplotlib
 - os (standard library)
 - numpy
-use the bash below with pip for installing the following dependency's
+
+use the bash below with pip for installing the following dependency's:
 -pip
 -gekko
 -amplpy
-
-point of note:
-the KT and KQ graph seem to be swapped. my guess is that the titles in the txt are swiched around. but this file was given to me from a third party, i maybe wrong here.
 
 ```bash
 python -m pip install --upgrade pip
