@@ -71,8 +71,8 @@ m = GEKKO(remote=False)
 # Define decision variables with bounds
 PD = m.Var(value=1.0, lb=0.5, ub=1.4)  #-
 D  = m.Var(value=1.0, lb=0.1, ub=14.0) #m
-n  = m.Var(value=2.0, lb=1.0, ub=10.0) #RPS
-Z_possible_values = [2, 3, 4, 5, 6, 7, 8, 9, 10]    #Blades
+n  = m.Var(value=2.0, lb=0.1, ub=10.0) #RPS
+Z_possible_values = [2, 3, 4, 5, 6]    #Blades
 Z_binary = [m.Var(value=0, lb=0, ub=1, integer=True) for _ in Z_possible_values]
 Z = m.Var(value=4, lb=min(Z_possible_values), ub=max(Z_possible_values))
 
@@ -140,19 +140,19 @@ optimized_P_towing = P_towing.VALUE[0]
 
 # --- Plotting Function for Optimized Propeller ---
 def plot_optimized_propeller_characteristics(PD_val, AEA0_val, Z_val, optimized_J, title):
-    J_values = np.linspace(0.01, 1, 100)
+    J_values = np.linspace(0.01, 1.5, 100)
     KT_values = [evaluate_bseries_polynomial(KT_coeffs, KT_powers, J, PD_val, AEA0_val, Z_val) for J in J_values]
     KQ_values = [evaluate_bseries_polynomial(KQ_coeffs, KQ_powers, J, PD_val, AEA0_val, Z_val) for J in J_values]
     eta0_values = [openwater_efficiency(KT, KQ, J) for KT, KQ, J in zip(KT_values, KQ_values, J_values)]
 
+    # Scale KQ for plotting only
+    KQ10_values = [10 * KQ for KQ in KQ_values]
+
     plt.figure(figsize=(10, 6))
     plt.plot(J_values, KT_values, label="KT", color='b')
-    plt.plot(J_values, KQ_values, label="KQ", color='r')
-        #IN MIJN W&V BOEK STAAT DE 10KQ LIJN BOVEN DE KT LIJN. DE PLOTTER DOET NIKS ANDERS DAN LEZEN EN PLOTTEN. WAT GAAT HIER MIS?
-        #IS DE GELEVERDE .TXT FOUT?
-        #IS HET BOEK HYD22 FOUT?
-        #GAAT ER IETS ANDERS MIS MET PLOTTEN? OOK IN DE EERSTE PLOT VOOR OPTIMALIZATIE (VORIGE VERZIE) GEBEURD DIT...
-    plt.plot(J_values, eta0_values, label="Efficiency (eta0)", color='g')
+    plt.plot(J_values, KQ10_values, label="10KQ", color='r')
+    plt.plot(J_values, eta0_values, label="Efficiency (eta)", color='g')
+    # efficiency seems to include the wake and thrust deduction in this graph...?
     plt.xlabel("J (Advance Coefficient)")
     plt.ylabel("Value")
     plt.legend()
@@ -173,7 +173,7 @@ print("PD:", optimized_PD_val)
 print("D :", optimized_D, "m")
 print("n :", optimized_n * 60, "rpm")
 print("Z :", optimized_Z_val, "blades")
-print("Delivered Towing Power:", optimized_P_towing, "N")
+print("Delivered Towing Power:", optimized_P_towing, "Nm/s")
 
 # Plot the characteristics of the optimized propeller
 plot_optimized_propeller_characteristics(optimized_PD_val, AEA0_val, optimized_Z_val, J.VALUE[0], "Optimized Propeller Characteristics")
