@@ -22,12 +22,10 @@ Ensure [Python 3](https://www.pythonguis.com/installation/install-python-windows
 - os (standard library)
 - [numpy](https://numpy.org/install/)
 
-use the bash below with pip for installing the following dependency's:
--pip
--gekko
--amplpy
+use the bash below with pip for updating pip and installing GEKKO and AMPLYPY
 
 ```bash
 python -m pip install --upgrade pip
+
 python -m pip install gekko
 python -m pip install amplpy
