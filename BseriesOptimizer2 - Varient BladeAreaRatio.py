@@ -128,6 +128,11 @@ def plot_optimized_propeller_characteristics(PD_val, AEA0_val, Z_val, optimized_
     plt.title(title)
     plt.legend()
     plt.grid(True)
+
+    # Set fixed axis limits
+    plt.xlim(0, 1.5)
+    plt.ylim(0, 1.2)
+
     plt.show()
 
 print("\nOptimized Result:")
