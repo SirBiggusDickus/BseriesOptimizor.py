@@ -13,6 +13,9 @@ This project is designed for open-source development and provides a flexible fra
 
 resulting in a graph like this:
 ![graph_example](https://github.com/user-attachments/assets/20ad7f12-58fe-4e0d-8318-8aac217739ca)
+or this, depending on the bounds:
+![graph_example2](https://github.com/user-attachments/assets/113bb519-2555-4043-a1de-c6df24c7cc76)
+
 ---
 
 ## Dependencies
